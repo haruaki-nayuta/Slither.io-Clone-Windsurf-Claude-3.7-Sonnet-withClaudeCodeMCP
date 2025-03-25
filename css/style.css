@@ -1,0 +1,199 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+    background-color: #222;
+    color: #fff;
+}
+
+#game-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+#game-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+#ui-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+#score-display {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+#leaderboard {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 10px;
+    width: 200px;
+}
+
+#leaderboard h3 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#leaderboard-list {
+    list-style-type: none;
+}
+
+#leaderboard-list li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    padding: 3px 5px;
+    border-radius: 3px;
+}
+
+#leaderboard-list li.player {
+    background-color: rgba(255, 255, 0, 0.3);
+}
+
+#minimap-container {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 150px;
+    height: 150px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    padding: 5px;
+}
+
+#minimap {
+    width: 100%;
+    height: 100%;
+    border-radius: 3px;
+}
+
+#game-menu, #game-over {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    z-index: 10;
+    width: 400px;
+}
+
+#game-menu h1, #game-over h2 {
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+#difficulty-selector {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.difficulty-btn {
+    flex: 1;
+    margin: 0 5px;
+    padding: 10px;
+    background-color: #444;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.difficulty-btn:hover {
+    background-color: #666;
+}
+
+.difficulty-btn.selected {
+    background-color: #4CAF50;
+}
+
+#start-game-btn, #restart-btn {
+    padding: 15px 30px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    margin: 20px 0;
+    transition: background-color 0.3s;
+}
+
+#start-game-btn:hover, #restart-btn:hover {
+    background-color: #45a049;
+}
+
+#instructions {
+    margin-top: 20px;
+    text-align: left;
+}
+
+#instructions h3 {
+    margin-bottom: 10px;
+}
+
+#instructions p {
+    margin-bottom: 5px;
+}
+
+#game-over {
+    display: none;
+}
+
+#stats-container {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 15px;
+    margin: 20px 0;
+    text-align: left;
+}
+
+#stats-container p {
+    margin-bottom: 10px;
+}
+
+/* Hide game menu when game is active */
+.game-active #game-menu {
+    display: none;
+}
+
+/* Animation for food collection */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.pulse {
+    animation: pulse 0.3s ease-in-out;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slither.io シングルプレイヤー</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="game-container">
+        <canvas id="game-canvas"></canvas>
+        <div id="ui-overlay">
+            <div id="score-display">スコア: <span id="current-score">0</span></div>
+            <div id="leaderboard">
+                <h3>リーダーボード</h3>
+                <ul id="leaderboard-list"></ul>
+            </div>
+            <div id="minimap-container">
+                <canvas id="minimap"></canvas>
+            </div>
+        </div>
+        <div id="game-menu">
+            <h1>Slither.io シングルプレイヤー</h1>
+            <div id="difficulty-selector">
+                <button class="difficulty-btn" data-difficulty="easy">Easy</button>
+                <button class="difficulty-btn" data-difficulty="normal">Normal</button>
+                <button class="difficulty-btn" data-difficulty="hard">Hard</button>
+            </div>
+            <button id="start-game-btn">ゲーム開始</button>
+            <div id="instructions">
+                <h3>操作方法</h3>
+                <p>マウスで方向を操作</p>
+                <p>マウスボタンを押している間は加速（体の一部を消費）</p>
+            </div>
+        </div>
+        <div id="game-over">
+            <h2>ゲームオーバー</h2>
+            <div id="stats-container">
+                <p>最終スコア: <span id="final-score">0</span></p>
+                <p>プレイ時間: <span id="play-time">0:00</span></p>
+                <p>倒したNPC数: <span id="killed-npcs">0</span></p>
+                <p>最大サイズ: <span id="max-size">0</span></p>
+            </div>
+            <button id="restart-btn">もう一度プレイ</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/utils.js"></script>
+    <script src="js/food.js"></script>
+    <script src="js/collision.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/npc.js"></script>
+    <script src="js/renderer.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html>
